@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <script type="text/javascript">
+        let debug = false;
+        let numberOfItems = 20; //can be changed
+        (function() {
+            var currentLocation = new URL(document.location)
+            if (!currentLocation.searchParams.get('simulator')) {
+                //is pwa mode, parse app settings from json
+                loadScript("AppSettingsManager.js").then(function() {
+                    var appSettingsManager = new AppSettingsManager();
+                    appSettingsManager.getSettings().then(function(e) {
+                        let app_settings = JSON.parse(e.target.response);
+                        console.prettyPrint(app_settings);
+                        getAnnouncements(app_settings);
+                    });
+                });
+            }
+        }());
+
+        function loadScript(url) {
+            return new Promise(function(resolve, reject) {
+                var script = document.createElement("script");
+                script.onload = resolve;
+                script.onerror = reject;
+                script.src = url;
+                document.getElementsByTagName("head")[0].appendChild(script);
+            });
+        }
+
+        window.console.prettyPrint = function() {
+            for (let i = 0; i < arguments.length; i++) {
+                if (debug)
+                    console.log(JSON.stringify(arguments[i], 0, 2));
+            }
+        };
+
+        var liTemplate = '<li class="push-item"> \n\
+				<h3 class="push-date">{date}</h3> \n\
+				<p class="push-message">{message}</p> \n\
+			</li>';
+
+        function getAnnouncements(app_settings) {
+            var urlToRequest = app_settings.server_host_name + "/getpushedmessages.ashx?isPwa=true";
+            fetch(urlToRequest, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(generateBodyParamObj(app_settings))
+                })
+                .then(function(response) {
+                    if (!response.ok) {
+                        throw new Error('Bad status code from server.');
+                    }
+                    return response.json();
+
+                }).then(function(responseData) {
+                    if (responseData) {
+                        console.prettyPrint(responseData);
+                    }
+                    var countHtmlNode = document.getElementsByClassName("limit-comment")[0];
+
+                    if (responseData && !responseData['no_result']) {
+                        var finalString = ''; //'<ul style="list-style: none;>';
+                        responseData.forEach(element => {
+                            finalString += liTemplate.replace("{date}", formatDate(element.date, true)).replace("{message}", element.message);
+                        });
+                        var myNode = document.getElementsByClassName("push-box")[0];
+                        myNode.innerHTML = finalString;
+                        countHtmlNode.innerHTML = "Showing last " + numberOfItems + " messages.";
+
+                    } else if (responseData && responseData['no_result']) {
+                        let nodeLi = document.getElementsByClassName('push-item')[0];
+                        let span = document.createElement('span');
+                        span.style = 'display:block; text-align:center';
+                        span.textContent = 'No Messages';
+                        nodeLi.innerHTML = span.outerHTML;
+
+                        countHtmlNode.innerHTML = "Showing last " + numberOfItems + "  messages.";
+
+                    }
+                });
+        }
+
+
+        function generateBodyParamObj(app_settings) {
+
+            let bodyParamObj = new Object();
+            bodyParamObj['publisher_id'] = app_settings.publisher_id;
+            bodyParamObj['username'] = app_settings.username;
+            bodyParamObj['app_id'] = app_settings.app_id;
+            bodyParamObj['templateId'] = window.location.pathname.split("/").pop();
+            bodyParamObj['maxwidth'] = 320;
+            bodyParamObj['limit'] = numberOfItems;
+
+            try {
+                //get topics from localstorage
+                var deviceId = localStorage.getItem(getAppDeviceIdKey(app_settings));
+                let topics = localStorage.getItem(deviceId + "_topics");
+
+                if (deviceId && topics) {
+                    bodyParamObj['topics'] = topics;
+                }
+            } catch (e) {}
+            return bodyParamObj;
+        }
+
+        function getAppDeviceIdKey(app_settings) {
+            let publisherId = app_settings.publisher_id;
+            let userName = app_settings.username;
+            let appId = app_settings.app_id;
+            let sufix = (publisherId + "-" + userName + "-" + appId).hashCode();
+            return ("notif_device_id_" + sufix);
+        }
+
+        function formatDate(date, returnConvert) {
+
+            var dte = new Date(date);
+
+            if (isNaN(dte.getTime()))
+                return;
+
+            var dateString = dte.toLocaleString();
+            dateString = dateString.replace(/^(.*\d{1,2}:\d{1,2}):\d{1,2}(.*?)( GMT.*)?$/, '$1$2');
+            if (returnConvert)
+                return dateString;
+            document.write(dateString);
+        }
+        String.prototype.hashCode = function() {
+            let hash = 0,
+                i, chr;
+            if (this.length === 0) return hash;
+            for (i = 0; i < this.length; i++) {
+                chr = this.charCodeAt(i);
+                hash = ((hash << 5) - hash) + chr;
+                hash |= 0; // Convert to 32bit integer
+            }
+            return hash;
+        };
+    </script>
+    <style type="text/css">
+        body {
+            background: #f2f4f5;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            -webkit-text-size-adjust: none;
+        }
+        
+        .limit-comment {
+            color: #d7d9db;
+            font-size: 14px;
+            padding: 1em;
+            text-align: center;
+        }
+        
+        .push-box {
+            padding: 0;
+            margin: 0;
+            background: #fff;
+        }
+        
+        .push-item {
+            border-bottom: 1px solid #d7d9db;
+            font-weight: bold;
+            color: #0f0f0f;
+            padding: 14px 15px;
+        }
+        
+        .push-date {
+            font-size: 15px;
+            font-weight: bold;
+            display: block;
+            margin: 0 0 10px;
+            color: #252525;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .push-message {
+            font-size: 14px;
+            font-weight: normal;
+            display: block;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <ul class="push-box">
+            <!-- message start -->
+            <li class="push-item">
+                <h3 class="push-date">
+                    <script type="text/javascript">
+                        formatDate('$messageDate$')
+                    </script>
+                </h3>
+                <p class="push-message">$messageText$</p>
+            </li>
+            <!-- message end -->
+        </ul>
+    </div>
+    <div class="limit-comment">$LimitComment$</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<xml>
+  <navigation type="simple" backgroundColor="#eeeeee" backgroundImage="" contentOverlap="" itemsPosition="" textStyle="0" textSize="10" textFont="" iosStyleNavigation="">
+    <items>
+      <item icon="icon-menu.png" text="tab1" textColor="#199CDB" selectedTextColor="#ffffff" selectedIcon="" backgroundImage="" selectedBackgroundImage="" backgroundColor="#ffffff" selectedBackgroundColor="#199CDB" />
+      <item icon="icon-bookmark.png" text="tab2" textColor="#199CDB" selectedTextColor="#ffffff" selectedIcon="" backgroundImage="" selectedBackgroundImage="" backgroundColor="#ffffff" selectedBackgroundColor="#199CDB" />
+    </items>
+  </navigation>
+  <targetplatform simulator="iPhoneX">iPhone</targetplatform>
+  <template price="199.99" id="BlankTemplate" scaleWebPagesToBaseResolution="false" topadtype="none" bottomadtype="none" globalLogo="" isUniversalApp="true" />
+  <prop id="appname" title="App Name" subtitle="">Wetlook</prop>
+  <prop id="tab1text" title="Tab1 Text">
+  </prop>
+  <prop id="tab1icon" title="Tab1 Icon">
+  </prop>
+  <prop id="tab2text" title="Tab2 Text">
+  </prop>
+  <prop id="tab2icon" title="Tab2 Icon">
+  </prop>
+  <prop id="tab3text" title="Tab3 Text">
+  </prop>
+  <prop id="tab3icon" title="Tab3 Icon">
+  </prop>
+  <prop id="tab4text" title="Tab4 Text">
+  </prop>
+  <prop id="tab4icon" title="Tab4 Icon">
+  </prop>
+  <planname>Basic</planname>
+  <file id="appStyles.xml" newsfile="yes">
+  </file>
+  <hostedresources>
+  </hostedresources>
+  <restrictedaccess>
+    <feature id="pushnotifications" enabled="true" />
+    <feature id="announcements" enabled="true" />
+    <feature id="pnTopicSubscription" enabled="true" />
+    <feature id="calendar" enabled="true" />
+    <feature id="coupon" enabled="true" />
+    <feature id="geofences" enabled="true" />
+    <feature id="loyalty" enabled="true" />
+    <feature id="map" enabled="true" />
+    <feature id="productorder" enabled="true" />
+    <feature id="Booking" enabled="true" />
+    <feature id="loginregister" enabled="true" />
+  </restrictedaccess>
+  <rateapp appleid="" rateatlaunch="no" rateatrelaunch="no" message="" cancelmessage="No, Thanks" remindmessage="Remind Me Later" actionmessage="Rate It Now" />
+  <ads allowUsingAdvertisingId="false" />
+  <admobpublisher id="" interstitialUnitId="" />
+  <doubleclickpublisher unitId="" />
+  <pollfish apiKey="" padding="0" position="na" />
+  <revmobappid id="" />
+  <scads refreshRate="30" />
+  <googleanalyticsid id="" />
+  <localizablelanguage value="eng" />
+  <paypalappid id="" />
+  <dropboxapp dropboxapikey="" />
+  <fbapp apikey="" />
+  <androidAppLicensing enabled="false" publicKey="" />
+  <apkExpansionFiles enabled="false" />
+  <androidInAppBilling enabled="false" />
+  <android installLocation="" />
+  <pdftron licenseKey="" />
+  <rotationapp>false</rotationapp>
+  <webView bouncesEnabled="true" hideLoadingAnimation="false" externalSiteZoomEnabled="false" />
+  <sharepointclient url="" username="" password="" />
+  <appstorelink>
+  </appstorelink>
+  <googleMaps androidApiV2Key="" />
+  <baiduMaps baiduMapsApiKeyAndroid="" baiduMapsApiKeyiOS="" />
+  <webapp statusBarStyle="default" iconsStyle="precomposed" offlineModeEnabled="false" inAppLinks="false" />
+  <locationServices>
+    <inUseDescription>
+    </inUseDescription>
+    <alwaysDescription>The application requires access to your phone’s location to notify when you enter or leave a geofence.</alwaysDescription>
+  </locationServices>
+  <cameraServices>
+    <cameraUsageDescription>The application requires access to device's camera.</cameraUsageDescription>
+  </cameraServices>
+  <photoLibraryServices>
+    <photoLibraryUsageDescription>The application requires access device's photo library.</photoLibraryUsageDescription>
+  </photoLibraryServices>
+  <microphoneServices>
+    <microphoneUsageDescription>This app requires to access your microphone to record.</microphoneUsageDescription>
+  </microphoneServices>
+  <inAppSettings />
+  <page id="contact.html" type="form" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="book.html" type="mobile" kind="html" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="about.html" type="headletterhtml" kind="html" transition="NONE" slidepageid="none" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="insta.html" type="mobile" kind="html" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="location.html" type="map" kind="native" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="false" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" title="" gmapzoom="75" mapType="normal" mapOrientation="0" logo="" interstitialadtype="none" hidetabbaratpush="no">
+    <locations>
+      <location>
+        <name>Wetlook car wash</name>
+        <latitude>45.597974</latitude>
+        <longitude>-73.585119</longitude>
+        <imageurl>
+        </imageurl>
+        <ldescription>About this location</ldescription>
+        <ltarget>https://www.google.ca/maps/place/6580+Rue+Magloire,+Saint-L%C3%A9onard,+QC+H1P+1N9/@45.5979745,-73.5873073,17z/data=!3m1!4b1!4m5!3m4!1s0x4cc91e591e2948ed:0xbafeec4608f4c511!8m2!3d45.5979745!4d-73.5851186</ltarget>
+        <ldistanceMode>none</ldistanceMode>
+        <markerImage>
+        </markerImage>
+      </location>
+    </locations>
+  </page>
+  <page id="contact-fr.html" type="form" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="facebook.html" type="mobilefacebook" kind="html" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="notification.html" type="announcements" kind="native" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="false" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" topics="" title="" logo="" interstitialadtype="none" hidetabbaratpush="no" />
+  <page id="book-fr.html" type="mobile" kind="html" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="gallery.html" type="html" kind="html" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false">
+  </page>
+  <page id="game.html" type="slotmachine" kind="native" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" spinLimit="3" spinLimitExpiration="0:0:1:0:0" title="" logo="" interstitialadtype="none" hidetabbaratpush="no">
+    <buttonimage src="spin.png" />
+    <soundbutton src="button.wav" />
+    <soundcomponentrotation src="components.wav" />
+    <soundcomponentstop src="stopcomponent.wav" />
+    <soundwin src="win.wav" />
+    <soundloser src="loser.wav" />
+    <timerotationofslots value="3" />
+    <actionofwinposition value="win135.html;win22.html;win135.html;win44.html;win135.html;win66.html" />
+    <winpositionofcomponents value="0;0;0;1;1;0;2;2;0;3;3;0;4;4;0;5;5;0" />
+    <component1>
+      <listcom action="" img="dice1.jpg" />
+      <listcom action="tab2.html" img="dice2.jpg" />
+      <listcom action="" img="dice3.jpg" />
+      <listcom action="tab4.html" img="dice4.jpg" />
+      <listcom action="" img="dice5.jpg" />
+      <listcom action="" img="dice6.jpg" />
+    </component1>
+    <component2>
+      <listcom action="tab1.html" img="dice1.jpg" />
+      <listcom action="" img="dice2.jpg" />
+      <listcom action="tab3.html" img="dice3.jpg" />
+      <listcom action="" img="dice4.jpg" />
+      <listcom action="" img="dice5.jpg" />
+      <listcom action="" img="dice6.jpg" />
+    </component2>
+    <component3>
+      <listcom action="tab1.html" img="spinlogo.png" />
+    </component3>
+  </page>
+  <page id="aboutfr.html" type="headletterhtml" kind="html" transition="NONE" slidepageid="none" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="win135.html" type="form" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="win66.html" type="form" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="win22.html" type="form" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="win44.html" type="form" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="gameinst.html" type="headletterhtml" kind="html" transition="NONE" slidepageid="none" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <page id="indexfr.html" type="pinkmenu" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <pushstatus>push_enabled</pushstatus>
+  <backgroundmodes audio="no" />
+  <version build="3">1.0</version>
+  <bundlename>Wetlook</bundlename>
+  <syncenabled>true</syncenabled>
+  <infobuttonenabled>false</infobuttonenabled>
+  <shineeffect>true</shineeffect>
+  <appStoreProperties>
+    <recentChanges>
+    </recentChanges>
+    <reviewContact firstName="b6LW+q8YqnYWHdmAEzfpIQ==" lastName="mI9xr8HV6FED9xIU6soWZQ==" email="N/AKyRVceIuTREcPFeh3VfDLlzfsrE8socUjClF/YL0=" phone="Wic03NBM2ca8pW667zqldw==" />
+    <reviewDemoAccount username="rhmRB+p9ItkpwBJMm9LMTw==" password="rhmRB+p9ItkpwBJMm9LMTw==" />
+    <primaryLanguage>6</primaryLanguage>
+    <privacyPolicy url="http://" />
+    <supportUrl>http://www.wetlookcarwash.com</supportUrl>
+    <marketingUrl>http://</marketingUrl>
+    <publisherReviewAppleID>rhmRB+p9ItkpwBJMm9LMTw==</publisherReviewAppleID>
+    <publisherReviewNotes>rhmRB+p9ItkpwBJMm9LMTw==</publisherReviewNotes>
+    <copyright>dgaiclJdtnCVFxnCdZp+WQ==</copyright>
+  </appStoreProperties>
+  <primarycat>1</primarycat>
+  <secondarycat>9</secondarycat>
+  <gameSubcategory1>0</gameSubcategory1>
+  <gameSubcategory2>0</gameSubcategory2>
+  <magazineSubcategory1>0</magazineSubcategory1>
+  <magazineSubcategory2>0</magazineSubcategory2>
+  <keywords>car%2C%20wash%2C%20carwash%2C%20facebook%2C%20instagram%2C%20snapchat%2C%20montreal%2C%20best%2C%20cheap%2C%20care%2C%20RDP%2C%20wetlook%2C%20trucks</keywords>
+  <promotext>
+  </promotext>
+  <description>Wetlook%20Hand%20Wash%20is%20an%20Eco-friendly%2C%20hand%20car%20wash%20and%20detailing%20service%20based%20in%20Montreal.%20Our%20company%20was%20founded%20by%20a%20team%20of%20experts%20with%20more%20then%2010%20years%20of%20professional%20car%20wash%20experience.%20We%20operate%20three%20car%20washes%20through%20Montreal%20area.%20Our%20goal%20is%20to%20provide%20our%20customers%20with%20the%20friendliest%2C%20most%20convenient%20hand%20car%20wash%20experience%20possible.%20We%20use%20the%20most%20modern%20and%20up-to-date%20water%20reclamation%20modules%20as%20a%20part%20of%20our%20car%20wash%20systems.%20Our%20products%20are%20all%20biodegradable%20and%20Eco-friendly.%0D%0A%0D%0ADownload%20or%20app%20today%20to%20stay%20tuned%20with%20our%20latest%20projects%20and%20services!</description>
+  <targetdevicesize>100</targetdevicesize>
+  <file id="-index.html" newsfile="yes" />
+  <page id="-index.html" type="pinkmenu" kind="html" transition="NONE" slidepageid="none" slidetransition="none" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" hasreviewhtmlkey="no" title="" logo="" shownavbar="no" openlinksonsametabview="no" zoomEnabled="false" hideLoadingAnimation="false" interstitialadtype="none" transitionsound="" hidetabbaratpush="no" />
+  <page id="index.html" type="html" kind="html" transition="NONE" slidepageid="" slidetransition="slide" hasreviews="no" hassend="no" hasfields="no" topadtype="inherited" bottomadtype="inherited" dynamicdata="false" jsonurl="" hidebottombaratpush="no" title="" logo="" shownavbar="no" openlinksonsametabview="no" zoomEnabled="false" hideLoadingAnimation="false" />
+  <file id="index.html" newsfile="yes" />
+  <file id="realslide1.jpg" newsfile="yes" />
+  <file id="realslide1.png" newsfile="yes" />
+  <file id="gallery.html" newsfile="yes" />
+  <file id="book-fr.html" newsfile="yes" />
+</xml>
